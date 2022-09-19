@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Data</title>
+</head>
+<body>
+    
+    <form action="simpan.php" method="post">
+        <h3>Tambah Data Siswa</h3>
+        <table class="wrap">
+        <tr class="">
+            <td>Id Siswa</td>
+            <td>:</td>
+            <td class=""><Label><input required="required" type="number" name="id_siswa"></Label></td>
+            </tr>
+        <tr>
+            <td>Nama</td>
+            <td>:</td>
+            <td class=""><Label><input required="required" type="text" name="nama"></Label></td>
+        </tr>
+        <tr>    
+            <td>Kelas</td>
+            <td>:</td>      
+            <td class="space"><Label><input required="required" type="text" name="kelas"></Label></td>
+        </tr>
+        <tr>
+            <td>Jurusan</td>
+            <td>:</td>
+            <td class="space"><Label><input required="required" type="text" name="jurusan"></Label></td>
+        </tr>
+        <tr>
+            <td>
+                <input class="submit" type="submit" name="save" value="save">
+                <a href="interface.php">Back</a> 
+            </td>                       
+        </tr>
+    </table>
+</form>
+</body>
+</html>
