@@ -50,7 +50,7 @@
             letter-spacing: 1px;
         }
         h3{
-            font-size: 40px;
+            font-size: 35px;
             text-align: center;
             margin-top: 20px;
             color: white;
@@ -70,6 +70,8 @@
             text-align: center;
             position: relative;
             left: 40px;
+            box-shadow: 2px 2px 12px rgb(0, 0, 0, 0.2);
+
         }
         
         th{
@@ -195,7 +197,7 @@
     <table border="1" cellpadding='10' cellspacing='0'>
         <tr>
             <th>No</th>
-            <th>Id Barang</th>
+            <th>ID Barang</th>
             <th>Kode Jenis</th>
             <th>Nama Barang</th>
             <th>Jenis Barang</th>

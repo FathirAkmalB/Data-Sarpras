@@ -10,9 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Siswa</title>
 
-   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <!-- Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <script src="https://kit.fontawesome.com/592a0f4cdf.js" crossorigin="anonymous"></script>
+
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Lobster&family=Quicksand&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
@@ -50,7 +53,7 @@
             letter-spacing: 1px;
         }
         h3{
-            font-size: 40px;
+            font-size: 35px;
             text-align: center;
             margin-top: 20px;
             color: white;
@@ -70,6 +73,11 @@
             text-align: center;
             position: relative;
             left: 40px;
+            box-shadow: 5px 5px 8px rgb(0, 0, 0, 0.2);
+
+        }
+        tr:nth-child(odd){
+            background-color: darkgray;
         }
         
         th{
@@ -175,6 +183,18 @@
             /* width: 70px; */
         }
 
+        form{
+            position: absolute;
+            display: flex;
+            margin-left: 400px;
+        }
+        .put{
+            height: 33px;
+            margin-top: 113px;
+            border-radius: 10px;
+            margin-left: 180px;
+        }
+
     </style>
 </head>
 <body>
@@ -182,7 +202,7 @@
         <h3>Star<span>BY</span></h3>
         <div class="nav">
             <div class="dasis">
-                <a href="interface.php"><button><i class="fa-solid fa-user"></i>Data Siswa</button></a>
+                <a href="interface.php"><button>Data Siswa</button></a>
             </div>
             <div class="dabar">
                 <a href="tampilbar.php"><button>Data Barang</button></a>
@@ -195,7 +215,7 @@
     <table border="1" cellpadding='10' cellspacing='0'>
         <tr>
             <th>No</th>
-            <th>Id Siswa</th>
+            <th>ID Siswa</th>
             <th>Nama</th>
             <th>Kelas</th>
             <th>Jurusan</th>

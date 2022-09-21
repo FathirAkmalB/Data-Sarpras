@@ -19,6 +19,10 @@ if(mysqli_num_rows($query) < 1){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Data Siswa</title>
+
+    <script src="https://kit.fontawesome.com/592a0f4cdf.js" crossorigin="anonymous"></script>
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Lobster&family=Quicksand&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
@@ -52,7 +56,10 @@ if(mysqli_num_rows($query) < 1){
             padding-left: 90px;
             padding-right: 15px;
             margin-top: 40px;
-            font-size: 20px;
+            /* font-size: 20px; */
+       }
+       aside button{
+        font-size: 15px;
        }
         .dabar button{
             text-align: center;
@@ -67,9 +74,8 @@ if(mysqli_num_rows($query) < 1){
             padding-left: 90px;
             padding-right: 15px;
             margin-top: 10px;
-            font-size: 20px;
-            cursor: pointer;
-            transition:  0.5 50ms;
+            /* font-size: 20px; */
+            
         }
 
         input{
@@ -98,7 +104,7 @@ if(mysqli_num_rows($query) < 1){
             letter-spacing: 1px;
         }
         h3{
-            font-size: 40px;
+            font-size: 35px;
             text-align: center;
             margin-top: 20px;
             color: white;
@@ -304,11 +310,6 @@ if(mysqli_num_rows($query) < 1){
 
         <form action="edit.php" method="post">
             <table>
-                <tr>
-                    <td class="nama id">Id Siswa</td>
-                    <td class="nama semcol1">:</td>
-                    <td class="in idsis"><Label><input value="<?php echo $sis['id_siswa']?>" required="required" type="hidden" name="id_siswa"></Label></td>
-                </tr>
                 <tr>
                     <td class="nama siswa">Nama</td>
                     <td class="nama semcol2">:</td>

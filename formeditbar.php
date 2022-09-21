@@ -38,8 +38,8 @@ if(mysqli_num_rows($query) < 1){
             background-color: #697184;
             font-family: sans-serif;
             position: fixed;
-            border-bottom-right-radius:40px;
-            border-top-right-radius:40px ;
+            border-bottom-right-radius:35px;
+            border-top-right-radius:35px ;
             top: 0;
         }
         .dabar button{
@@ -55,7 +55,10 @@ if(mysqli_num_rows($query) < 1){
             padding-left: 90px;
             padding-right: 15px;
             margin-top: 10px;
-            font-size: 20px;
+            /* font-size: 20px; */
+       }
+       aside button{
+        font-size: 15px;
        }
         .dasis button{
             text-align: center;
@@ -67,12 +70,10 @@ if(mysqli_num_rows($query) < 1){
             border-top-right-radius: 14px;
             border: none;
             padding: 5px;
-            padding-left: 90px;
+            padding-left: 100px;
             padding-right: 15px;
             margin-top: 40px;
-            font-size: 20px;
-            cursor: pointer;
-            transition:  0.5 50ms;
+            /* font-size: 20px; */
         }
         
         .edit{
@@ -90,7 +91,7 @@ if(mysqli_num_rows($query) < 1){
             letter-spacing: 1px;
         }
         h3{
-            font-size: 40px;
+            font-size: 35px;
             text-align: center;
             margin-top: 20px;
             color: white;
@@ -321,11 +322,6 @@ if(mysqli_num_rows($query) < 1){
         <form action="editbar.php" method="post">
             <table>
                 <tr>
-                    <td class="nama id">Id</td>
-                    <td class="nama semcol1">:</td>
-                    <td class="in idsis"><Label><input value="<?php echo $bar['id']?>" required="required" type="hidden" name="id"></Label></td>
-                </tr>
-                <tr>
                     <td class="nama siswa">Kode Jenis</td>
                     <td class="nama semcol2">:</td>
                     <td class="in sis"><Label><input value="<?php echo $bar['kode_jenis']?>" required="required" type="text" name="kode_jenis"></Label></td>
@@ -348,7 +344,7 @@ if(mysqli_num_rows($query) < 1){
     </table>
     <div class="btn">     
         <input type="submit" name="edit" value="Edit" onclick="return confirm('apakah anda yakin ingin mengubah data tersebut?')">
-        <button><a href="tampilbar.php"> Back</button></a>
+        <button><a href="tampilbar.php">Back</button></a>
     </div>
 </form>
     </div>
