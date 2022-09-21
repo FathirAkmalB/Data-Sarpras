@@ -8,7 +8,7 @@ if(isset($_POST['edit'])){
     $jurusan = $_POST['jurusan'];
 
 
-    $sql = "UPDATE data_siswa SET id_siswa = '$id_siswa', nama = '$nama', kelas = '$kelas', jurusan = '$jurusan'";
+    $sql = "UPDATE data_siswa SET id_siswa = '$id_siswa', nama = '$nama', kelas = '$kelas', jurusan = '$jurusan' WHERE data_barang. id = '$id'";
 
     $query = mysqli_query($connect, $sql);
     if($query){

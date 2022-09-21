@@ -3,15 +3,17 @@
 include 'koneksi.php';
 
 
-$id_siswa = $_GET['idsis'];
-$sql = "SELECT * FROM data_siswa WHERE id_siswa ='$id_siswa'";
+$id = $_GET['idbar'];
+$sql = "SELECT * FROM data_barang WHERE id ='$id'";
 $query= mysqli_query($connect,$sql);
-$sis = mysqli_fetch_assoc($query);
+$bar = mysqli_fetch_assoc($query);
 
 if(mysqli_num_rows($query) < 1){
     die("Data tidak ditemukan");
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,6 +21,7 @@ if(mysqli_num_rows($query) < 1){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Data Siswa</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Lobster&family=Quicksand&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
@@ -39,7 +42,7 @@ if(mysqli_num_rows($query) < 1){
             border-top-right-radius:40px ;
             top: 0;
         }
-        .dasis button{
+        .dabar button{
             text-align: center;
             font-family: 'Jost', sans-serif;
             list-style: none;
@@ -51,10 +54,10 @@ if(mysqli_num_rows($query) < 1){
             padding: 5px;
             padding-left: 90px;
             padding-right: 15px;
-            margin-top: 40px;
+            margin-top: 10px;
             font-size: 20px;
        }
-        .dabar button{
+        .dasis button{
             text-align: center;
             font-family: 'jost', sans-serif;
             list-style: none;
@@ -66,21 +69,10 @@ if(mysqli_num_rows($query) < 1){
             padding: 5px;
             padding-left: 90px;
             padding-right: 15px;
-            margin-top: 10px;
+            margin-top: 40px;
             font-size: 20px;
             cursor: pointer;
             transition:  0.5 50ms;
-        }
-
-        input{
-            font-size: 20px;
-            padding-left: 5px;
-            /* outline: solid 1px  #F8B01A; */
-            border: transparent;
-        }
-        input:focus{
-            outline: 1px #F8B01A solid;
-            border: transparent;
         }
         
         .edit{
@@ -157,7 +149,6 @@ if(mysqli_num_rows($query) < 1){
             height: 23px;
             left: 90px;
             top: 25px;
-            
         }
         .semcol1{
             width: 80px;
@@ -179,7 +170,7 @@ if(mysqli_num_rows($query) < 1){
             width: 80px;
             height: 23px;
             left: 90px;
-            top: 85px;
+            top: 75px;
         }
         .semcol2{
             width: 80px;
@@ -203,7 +194,7 @@ if(mysqli_num_rows($query) < 1){
             width: 80px;
             height: 23px;
             left: 90px;
-            top: 145px;
+            top: 135px;
         }
         .semcol3{
             width: 80px;
@@ -229,7 +220,7 @@ if(mysqli_num_rows($query) < 1){
             width: 80px;
             height: 23px;
             left: 90px;
-            top: 215px;
+            top: 205px;
         }
         .semcol4{
             width: 80px;
@@ -243,6 +234,31 @@ if(mysqli_num_rows($query) < 1){
             height: 30px;
             margin-left: 220px;
             margin-top: 200px;
+            border-radius: 5px; 
+            padding: 5px;  
+            position: absolute;
+
+        }
+
+       /* baris 5 */
+       .stok{
+            width: 80px;
+            height: 23px;
+            left: 90px;
+            top: 265px;
+        }
+        .semcol5{
+            width: 80px;
+            height: 23px;
+            left: 170px;
+            top: 265px;
+        }
+        .stok input{
+            border: 1px solid #000000;
+            width: 540px;
+            height: 30px;
+            margin-left: 130px;
+            margin-top: -4px;
             border-radius: 5px; 
             padding: 5px;  
             position: absolute;
@@ -299,35 +315,40 @@ if(mysqli_num_rows($query) < 1){
             </div>
         </div>
     </aside>
-    <h3><label for="">Edit Data Siswa</label></h3>
+    <h3><label for=""> Edit Data Barang</label></h3>
     <div class="Right">
 
-        <form action="edit.php" method="post">
+        <form action="editbar.php" method="post">
             <table>
                 <tr>
-                    <td class="nama id">Id Siswa</td>
+                    <td class="nama id">Id</td>
                     <td class="nama semcol1">:</td>
-                    <td class="in idsis"><Label><input value="<?php echo $sis['id_siswa']?>" required="required" type="hidden" name="id_siswa"></Label></td>
+                    <td class="in idsis"><Label><input value="<?php echo $bar['id']?>" required="required" type="hidden" name="id"></Label></td>
                 </tr>
                 <tr>
-                    <td class="nama siswa">Nama</td>
+                    <td class="nama siswa">Kode Jenis</td>
                     <td class="nama semcol2">:</td>
-                    <td class="in sis"><Label><input value="<?php echo $sis['nama']?>" required="required" type="text" name="nama"></Label></td>
+                    <td class="in sis"><Label><input value="<?php echo $bar['kode_jenis']?>" required="required" type="text" name="kode_jenis"></Label></td>
                 </tr>
                 <tr>
-                    <td class="nama kelas">Kelas</td>
+                    <td class="nama kelas">Nama Barang</td>
                     <td class="nama semcol3">:</td>
-                    <td class="in kel"><Label><input value="<?php echo $sis['kelas']?>" required="required" type="text" name="kelas"></label></td>
+                    <td class="in kel"><Label><input value="<?php echo $bar['nama_barang']?>" required="required" type="text" name="nama_barang"></label></td>
                 </tr>
                 <tr>
-                    <td class="nama jurusan">Jurusan</td>
+                    <td class="nama jurusan">Jenis Barang</td>
                     <td class="nama semcol4">:</td>
-                    <td class="in jur"><Label><input value="<?php echo $sis['jurusan']?>" required="required" type="text" name="jurusan"></Label></td>
-            </tr>
+                    <td class="in jur"><Label><input value="<?php echo $bar['jenis_barang']?>" required="required" type="text" name="jenis_barang"></Label></td>
+                </tr>
+                <tr>
+                    <td class="nama stok">Stock</td class="">
+                    <td class="nama semcol5">:</td class="">
+                    <td class="in stok"><Label><input value="<?php echo $bar['stok']?>" required="required" type="number" name="stok"></Label></td>
+                </tr>
     </table>
     <div class="btn">     
         <input type="submit" name="edit" value="Edit" onclick="return confirm('apakah anda yakin ingin mengubah data tersebut?')">
-        <button><a href="interface.php"> Back</button></a>
+        <button><a href="tampilbar.php"> Back</button></a>
     </div>
 </form>
     </div>

@@ -8,14 +8,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Pelanggan</title>
+    <title>Data Siswa</title>
 
+   
+    <!-- Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="style.css"> -->
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Lobster&family=Quicksand&family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
     <style>
@@ -26,15 +24,30 @@
             text-decoration: none;
         }
         aside{
-           
-            width: 300px;
-            height: 1000px;
+            width: 200px;
+            height: 660px;
             background-color: #697184;
             font-family: sans-serif;
             position: fixed;
+            border-bottom-right-radius:35px;
+            border-top-right-radius:35px ;
         }
         .kanan{
             float: right;
+        }
+        .edit{
+            font-size: 14px;
+            /* right: 15px; */
+            /* background-color: ; */
+        }
+        .hapus{
+            font-size: 14px;
+        }
+        .create{
+            color: white;
+            padding: 1em;
+            font-size: 15px;
+            letter-spacing: 1px;
         }
         h3{
             font-size: 40px;
@@ -42,31 +55,38 @@
             margin-top: 20px;
             color: white;
             font-family: 'jost',sans-serif;
+            /* background-color: aqua; */
         }
         span{
             color: #F8B01A;
         }
-        .dasis{
-            margin-left: 0;
-        }
-        .dabar button{
+        table{
+            font-family: 'Quicksand', sans-serif;
+            border-color: #697184;
+            /* padding: 15px; */
+            margin-top: 40px;
+            margin-right: 90px;
+            width: 900px;
             text-align: center;
-            font-family: 'jost', sans-serif;
-            list-style: none;
-            color: white;
+            position: relative;
+            left: 40px;
+        }
+        
+        th{
             background-color: #697184;
-            border-bottom-right-radius: 14px;
-            border-top-right-radius: 14px;
-            border: none;
-            padding: 5px;
-            padding-left: 90px;
-            padding-right: 15px;
-            margin-top: 10px;
-            font-size: 20px;
+            padding: 8px;
+            color: white;
+        }
+        td{
+            padding: 9px;
+        }
+        
+        aside button{
+            font-size: 15px;
         }
         .dasis button{
             text-align: center;
-            font-family: 'jost', sans-serif;
+            font-family: 'Jost', sans-serif;
             list-style: none;
             color: white;
             background-color: #F8B01A;
@@ -77,28 +97,26 @@
             padding-left: 90px;
             padding-right: 15px;
             margin-top: 40px;
-            font-size: 20px;
+            /* font-size: 20px; */
        }
-        table{
-            font-family: 'Quicksand', sans-serif;
-            border-color: #697184;
-            /* padding: 15px; */
-            margin-top: 40px;
-            margin-right: 90px;
-            width: 900px;
+        .dabar button{
             text-align: center;
-            position: relative;
-        }
-        
-
-        th{
-            background-color: #697184;
-            padding: 10px;
+            font-family: 'jost', sans-serif;
+            list-style: none;
             color: white;
+            background-color: transparent;
+            border-bottom-right-radius: 14px;
+            border-top-right-radius: 14px;
+            border: none;
+            padding: 5px;
+            padding-left: 100px;
+            padding-right: 15px;
+            margin-top: 10px;
+            /* font-size: 20px; */
+            /* cursor: pointer; */
         }
-        td{
-            padding: 10px;
-        }
+ 
+        
         h3 label{
             /* background-color: #F8B01A; */
             color: #697184;
@@ -117,7 +135,7 @@
             margin-right: 900px;
             /* margin-right: 200px; */
             padding: 7px;
-
+            margin-left: 40px;
             border-radius: 15px;
             color: white;
             font-family: 'jost', sans-serif;
@@ -162,9 +180,9 @@
 <body>
     <aside>
         <h3>Star<span>BY</span></h3>
-        <div>
+        <div class="nav">
             <div class="dasis">
-                <a href="interface.php"><button>Data Siswa</button></a>
+                <a href="interface.php"><button><i class="fa-solid fa-user"></i>Data Siswa</button></a>
             </div>
             <div class="dabar">
                 <a href="tampilbar.php"><button>Data Barang</button></a>
@@ -173,7 +191,7 @@
     </aside>
     <div class="kanan">
     <h3><label for=""> Data Siswa</label></h3> 
-    <button><a href="user.html">Create</a></button>
+    <button><a href="user.html" class="create">Create</a></button>
     <table border="1" cellpadding='10' cellspacing='0'>
         <tr>
             <th>No</th>
@@ -196,8 +214,8 @@
             <td>$sis[kelas]</td>
             <td>$sis[jurusan]</td>
             <td>
-                <a href='formedit.php?idsis=".$sis['id_siswa']."'>Edit</a>
-                <a href='hapus.php?idsis=".$sis['id_siswa']."' onClick=\" return confirm('apakah anda yakin ingin menghapus data ini?');\">Hapus</a>
+                <a href='formedit.php?idsis=".$sis['id_siswa']."' class=\"edit\">Edit</a>
+                <a href='hapus.php?idsis=".$sis['id_siswa']."'class=\"hapus\" onClick=\" return confirm('apakah anda yakin ingin menghapus data ini?');\">Hapus</a>
             </td>
             </tr>
         ";
