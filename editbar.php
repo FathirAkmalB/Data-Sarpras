@@ -9,7 +9,7 @@ if(isset($_POST['edit'])){
     $stok = $_POST['stok'];
 
 
-    $sql = "UPDATE data_barang SET id = '$id', kode_jenis = '$kode_jenis', nama_barang = '$nama_barang', jenis_barang = '$jenis_barang', stok = '$stok' WHERE data_barang. id = '$id'";
+    $sql = "UPDATE data_barang SET id = '$id', kode_jenis = '$kode_jenis', nama_barang = '$nama_barang', jenis_barang = '$jenis_barang', stok = '$stok' WHERE data_barang . id = '$id'";
 
     $query = mysqli_query($connect, $sql);
     if($query){

@@ -322,6 +322,11 @@ if(mysqli_num_rows($query) < 1){
         <form action="editbar.php" method="post">
             <table>
                 <tr>
+                    <td class="nama id">ID</td>
+                    <td class="nama semcol1">:</td>
+                    <td class="in idsis"><Label><input value="<?php echo $bar['id']?>" required="required" type="hidden" name="id"></Label></td>
+                </tr>
+                <tr>
                     <td class="nama siswa">Kode Jenis</td>
                     <td class="nama semcol2">:</td>
                     <td class="in sis"><Label><input value="<?php echo $bar['kode_jenis']?>" required="required" type="text" name="kode_jenis"></Label></td>

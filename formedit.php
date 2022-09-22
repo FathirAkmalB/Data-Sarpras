@@ -82,7 +82,7 @@ if(mysqli_num_rows($query) < 1){
             font-size: 20px;
             padding-left: 5px;
             /* outline: solid 1px  #F8B01A; */
-            border: transparent;
+            border: 1px black solid;
         }
         input:focus{
             outline: 1px #F8B01A solid;
@@ -172,7 +172,7 @@ if(mysqli_num_rows($query) < 1){
             top: 25px;
         }
         .idsis{
-            border: 1px solid #000000;
+            /* border: 1px solid #000000; */
             width: 540px;
             height: 30px;
             left: 220px;
@@ -194,7 +194,7 @@ if(mysqli_num_rows($query) < 1){
             top: 85px;
         }
         .sis input{
-            border: 1px solid #000000;
+            /* border: 1px solid #000000; */
             width: 540px;
             height: 30px;
             margin-left: 220px;
@@ -218,7 +218,7 @@ if(mysqli_num_rows($query) < 1){
             top: 145px;
         }
         .kel input{
-            border: 1px solid #000000;
+            /* border: 1px solid #000000; */
             width: 540px;
             height: 30px;
             margin-left: 220px;
@@ -226,8 +226,6 @@ if(mysqli_num_rows($query) < 1){
             border-radius: 5px; 
             padding: 5px;  
             position: absolute;
-            /* z-index: 1; */
-
         }
         
         /* baris 4 */
@@ -244,7 +242,7 @@ if(mysqli_num_rows($query) < 1){
             top: 215px;
         }
         .jur input{
-            border: 1px solid #000000;
+            /* border: 1px solid #000000; */
             width: 540px;
             height: 30px;
             margin-left: 220px;
@@ -311,6 +309,11 @@ if(mysqli_num_rows($query) < 1){
         <form action="edit.php" method="post">
             <table>
                 <tr>
+                    <td class="nama id">ID</td>
+                    <td class="nama semcol1">:</td>
+                    <td class="in idsis"><Label><input value="<?php echo $sis['id_siswa']?>" required="required" type="hidden" name="id_siswa"></Label></td>
+                </tr>
+                <tr>
                     <td class="nama siswa">Nama</td>
                     <td class="nama semcol2">:</td>
                     <td class="in sis"><Label><input value="<?php echo $sis['nama']?>" required="required" type="text" name="nama"></Label></td>
@@ -327,7 +330,7 @@ if(mysqli_num_rows($query) < 1){
             </tr>
     </table>
     <div class="btn">     
-        <input type="submit" name="edit" value="Edit" onclick="return confirm('apakah anda yakin ingin mengubah data tersebut?')">
+        <input type="submit" name="ubah" value="Edit" onclick="return confirm('apakah anda yakin ingin mengubah data tersebut?')">
         <button><a href="interface.php"> Back</button></a>
     </div>
 </form>
